@@ -1,0 +1,26 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="Generador personal de código con inteligencia artificial" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Code Mobile</title>
+  <style id="lf-tema">html,body{background:#0d1117 !important;color:#e6edf3 !important;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif !important;font-size:16px !important}</style></head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.addEventListener('error', function (event) {
+        var root = document.getElementById('app');
+        if (!root || root.innerHTML.trim()) return;
+        root.innerHTML = '<main style="min-height:100vh;display:grid;place-content:center;padding:24px;background:#080c17;color:#f5f7fb;font-family:system-ui,sans-serif"><div><p style="color:#72e6db;letter-spacing:.14em;font-size:11px">CODE MOBILE</p><h1 style="font-size:28px">No se pudo cargar la aplicación</h1><p style="color:#8491a7;line-height:1.6">Cierra y vuelve a abrir el APK. Si continúa, ejecuta <b>npm run build</b> y después <b>npx cap copy android</b>.</p><pre style="white-space:pre-wrap;color:#ffadad">' + String(event.message || 'Error de carga') + '</pre></div></main>';
+      });
+      window.addEventListener('unhandledrejection', function (event) {
+        console.error('[Code Mobile] Promesa no controlada:', event.reason);
+      });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
